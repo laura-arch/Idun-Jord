@@ -1,0 +1,58 @@
+[
+	{
+		"id": 1,
+		"name": "Aloe Vera",
+		"image": "https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/aloe-vera/133344/Aloe-Vera-fibreclay-pot-grey_c6832acb27c72430f782d679cd672ef1.webp",
+		"category": "SU",
+		"height": 35,
+		"watering_frequency": "Water me every two weeks",
+		"soil": "Sandy, gritty well-draining soil",
+		"light_tolerance": "Light loving, needs a south-facing window",
+		"pot_size": 12,
+		"price": 5.0,
+		"creation_date": "2022-05-12T09:40:07.929732Z",
+		"modification_date": "2022-05-12T09:40:21.237598Z"
+	},
+	{
+		"id": 2,
+		"name": "Snake Plant Laurentii",
+		"image": "https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/snake-plant-laurentii/134178/snake-plant-laurentii-in-curved-fiberclay-stone-plant-pot_c6832acb27c72430f782d679cd672ef1.webp",
+		"category": "SU",
+		"height": 50,
+		"watering_frequency": "Every two weeks, as long as the soil has dried out",
+		"soil": "Well-draining soil and pot needed",
+		"light_tolerance": "Anywhere from light shade to full sun",
+		"pot_size": 14,
+		"price": 12.0,
+		"creation_date": "2022-05-12T09:47:40.435432Z",
+		"modification_date": "2022-05-12T09:47:40.435461Z"
+	},
+	{
+		"id": 3,
+		"name": "Blue Myrtle Cactus",
+		"image": "https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/blue-myrtle-cactus/154382/Myrtillocactus-geometrizans-1_c6832acb27c72430f782d679cd672ef1.webp",
+		"category": "SU",
+		"height": 35,
+		"watering_frequency": "Every three weeks",
+		"soil": "Sandy and well-draining",
+		"light_tolerance": "Full sunlight, suggested in a south-facing window",
+		"pot_size": 21,
+		"price": 20.0,
+		"creation_date": "2022-05-12T09:52:40.725096Z",
+		"modification_date": "2022-05-12T09:52:40.725124Z"
+	},
+	{
+		"id": 4,
+		"name": "Moth Orchid",
+		"image": "https://cdn.thestem.co.uk/production/imager-transforms/digitaloceanspaces/product-images/plants/moth-orchid-pink/134138/pink-moth-orchid-in-lisbon-plant-pot_c6832acb27c72430f782d679cd672ef1.webp",
+		"category": "FL",
+		"height": 55,
+		"watering_frequency": "Water once a week, and spray my roots",
+		"soil": "Plant me in a bed of bark or rocks!",
+		"light_tolerance": "Bright but indirect sunlight",
+		"pot_size": 12,
+		"price": 10.0,
+		"creation_date": "2022-05-12T18:18:38.217198Z",
+		"modification_date": "2022-05-12T18:18:38.217229Z"
+	}
+]
