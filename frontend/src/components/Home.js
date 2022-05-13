@@ -39,6 +39,9 @@ const App = () => {
           </a>
         ))}
       </div>
+      <a href="new">
+        <button>New Plant</button>
+      </a>
     </div>
   );
 };
