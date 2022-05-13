@@ -23,7 +23,7 @@ class ShowListView(APIView):
 
 class ShowDetailView(APIView):
     def get(self, _request, pk):
-        plant = Plant.objects.get(id=pk)
+        plant = Plant.objects.get(name=pk)
         serialized_plant = PlantSerializer(plant, many=False)
         return Response(serialized_plant.data)
 
