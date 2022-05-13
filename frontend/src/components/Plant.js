@@ -24,7 +24,11 @@ const Plant = () => {
     fetchPlant();
   }, []);
 
-  const handleClick = async () => {
+  const handleUpdateClick = () => {
+    navigate(`/${plantName}/update/`);
+  };
+
+  const handleDeleteClick = async () => {
     await axios.delete(`http://localhost:8000/plants/${plantId}/`);
     navigate("/");
   };
@@ -33,7 +37,10 @@ const Plant = () => {
     <div className="app-content">
       <h1 className="main-heading">{plant.name}</h1>
       <img className="main-image" src={plant.image}></img>
-      <button className="delete-button" onClick={handleClick}>
+      <button className="update-button" onClick={handleUpdateClick}>
+        Update Plant
+      </button>
+      <button className="delete-button" onClick={handleDeleteClick}>
         Delete Plant
       </button>
     </div>

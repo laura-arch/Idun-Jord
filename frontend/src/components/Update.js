@@ -103,57 +103,63 @@ const UpdatePlant = () => {
           type="text"
           placeholder="Plant name"
           name="name"
-          value={plant.name}
+          defaultValue={plant.name}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Image URL"
           name="image"
-          value={plant.image}
+          defaultValue={plant.image}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Category"
           name="category"
-          value={plant.category}
+          defaultValue={plant.category}
           onChange={onChange}
         />
         <input
           type="number"
           placeholder="Plant height"
           name="height"
+          defaultValue={plant.height}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Watering frequency"
           name="watering_frequency"
+          defaultValue={plant.watering_frequency}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Soil type"
           name="soil"
+          defaultValue={plant.soil}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Light tolerance"
           name="light_tolerance"
+          defaultValue={plant.light_tolerance}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Pot size"
           name="pot_size"
+          defaultValue={plant.pot_size}
           onChange={onChange}
         />
         <input
           type="number"
           placeholder="Price"
           name="price"
+          defaultValue={plant.price}
           onChange={onChange}
         />
 
