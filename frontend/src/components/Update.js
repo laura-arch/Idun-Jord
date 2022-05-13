@@ -1,15 +1,49 @@
-import { useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import logo from "./../logo.png";
 import "./../styles/App.css";
 
-const CreatePlant = () => {
+const UpdatePlant = () => {
+  const { plantName } = useParams();
+  const [plant, setPlant] = useState([]);
+  const [plantId, setPlantId] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchPlant = async () => {
+      const response = await fetch(
+        `http://localhost:8000/plants/${plantName}/`
+      );
+      const result = await response.json(response);
+      setPlant(result);
+      setPlantId(result.id);
+      console.log(plantId);
+      // Setting the form data with current plant values
+      setFormData({ ...formData, name: plant.name });
+      setFormData({ ...formData, image: plant.image });
+      setFormData({ ...formData, category: plant.category });
+      setFormData({ ...formData, height: plant.height });
+      setFormData({
+        ...formData,
+        watering_frequency: plant.watering_frequency,
+      });
+      setFormData({ ...formData, soil: plant.soil });
+      setFormData({ ...formData, light_tolerance: plant.light_tolerance });
+      setFormData({ ...formData, pot_size: plant.pot_size });
+      setFormData({ ...formData, price: plant.price });
+      await console.log(formData);
+    };
+    fetchPlant();
+  }, []);
 
   // Handling onChange
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
     setSubmitted(false);
   };
 
@@ -18,10 +52,14 @@ const CreatePlant = () => {
     console.log(formData);
     e.preventDefault();
     try {
-      const resp = await axios.post("http://localhost:8000/plants/", formData);
+      const resp = await axios.put(
+        `http://localhost:8000/plants/${plantId}/`,
+        formData
+      );
       console.log(resp);
       setSubmitted(true);
       setError(false);
+      navigate("/");
     } catch (e) {
       setError(e.response.data.message);
     }
@@ -36,7 +74,7 @@ const CreatePlant = () => {
           display: submitted ? "" : "none",
         }}
       >
-        <h1>Plant added to site!</h1>
+        <h1>Plant updated!</h1>
       </div>
     );
   };
@@ -57,25 +95,29 @@ const CreatePlant = () => {
 
   return (
     <div className="app-content">
-      <h1 className="main-heading">New Plant Details</h1>
+      <h1 className="main-heading">{plantName}</h1>
+      <img className="main-image" src={plant.image}></img>
       {errorMessage && <div className="failure">{errorMessage}</div>}
       <form className="form" onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="Plant name"
           name="name"
+          value={plant.name}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Image URL"
           name="image"
+          value={plant.image}
           onChange={onChange}
         />
         <input
           type="text"
           placeholder="Category"
           name="category"
+          value={plant.category}
           onChange={onChange}
         />
         <input
@@ -116,11 +158,11 @@ const CreatePlant = () => {
         />
 
         <button className="button" type="submit">
-          Add plant
+          Update plant
         </button>
       </form>
     </div>
   );
 };
 
-export default CreatePlant;
+export default UpdatePlant;

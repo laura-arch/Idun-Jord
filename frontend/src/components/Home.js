@@ -21,7 +21,7 @@ const App = () => {
       <img src={logo} className="App-logo" alt="logo" />
       <div className="listings">
         {plants.map((plant) => (
-          <a href={plant.name} target="_blank">
+          <a href={plant.name}>
             <div
               className="plant-listing"
               key={plant.name}
