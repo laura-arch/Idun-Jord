@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Nav from "./components/Nav.js";
 import Home from "./components/Home.js";
 import Plant from "./components/Plant.js";
+import CreatePlant from "./components/Create.js";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Nav />}>
             <Route index element={<Home />} />
             <Route path="/:plantId" element={<Plant />} />
+            <Route path="/new" element={<CreatePlant />} />
           </Route>
         </Routes>
       </Router>

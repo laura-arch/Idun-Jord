@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "./../logo.png";
-import "./../App.css";
+import "./../styles/App.css";
 
 const App = () => {
   const [plants, setPlants] = useState([]);
@@ -15,31 +15,15 @@ const App = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        min_height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        backgroundColor: "lightgreen",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: 44,
-          color: "green",
-          fontWeight: "bold",
-        }}
-      >
-        Idun & Jörd
-      </h1>
+    <div className="app-content">
+      <h1 className="main-heading">Idun & Jörd</h1>
       {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMmo4NGpL_-MhE3TxT2gpWurHla6r5a7_sPw&usqp=CAU"></img> */}
       <img src={logo} className="App-logo" alt="logo" />
-      <div>
+      <div className="listings">
         {plants.map((plant) => (
           <a href={plant.name} target="_blank">
             <div
+              className="plant-listing"
               key={plant.name}
               style={{
                 padding: 15,

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import logo from "./../logo.png";
-import "./../App.css";
+import "./../styles/App.css";
+
+<link rel="stylesheet" href="./../App.css"></link>;
 
 const Plant = () => {
   const [plant, setPlant] = useState([]);
@@ -17,27 +19,9 @@ const Plant = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        min_height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        backgroundColor: "lightgreen",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: 44,
-          color: "green",
-          fontWeight: "bold",
-        }}
-      >
-        {plant.name}
-      </h1>
-
-      <img src={plant.image}></img>
+    <div className="app-content">
+      <h1 className="main-heading">{plant.name}</h1>
+      <img className="main-image" src={plant.image}></img>
     </div>
   );
 };
