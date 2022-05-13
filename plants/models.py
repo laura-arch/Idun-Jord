@@ -21,9 +21,9 @@ class Plant(models.Model):  # inheriting from Django Model class
         choices=Categories.choices
     )
     height = models.IntegerField(null=True)
-    watering_frequency = models.CharField(max_length=50, null=True)
-    soil = models.CharField(max_length=50)
-    light_tolerance = models.CharField(max_length=50)
+    watering_frequency = models.CharField(max_length=200, null=True)
+    soil = models.CharField(max_length=200)
+    light_tolerance = models.CharField(max_length=200)
     pot_size = models.IntegerField(null=True)
     price = models.FloatField()
     creation_date = models.DateTimeField(auto_now_add=True)

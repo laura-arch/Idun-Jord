@@ -1,11 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import "./../styles/App.css";
+import { useParams, useNavigate } from "react-router-dom";
 
 const CreatePlant = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
 
   // Handling onChange
   const onChange = (e) => {
@@ -22,6 +24,7 @@ const CreatePlant = () => {
       console.log(resp);
       setSubmitted(true);
       setError(false);
+      navigate(`/${formData.name}/`);
     } catch (e) {
       setError(e.response.data.message);
     }
