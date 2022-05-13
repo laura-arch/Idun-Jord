@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Nav />}>
             <Route index element={<Home />} />
-            <Route path="/:plantId" element={<Plant />} />
+            <Route path="/:plantName" element={<Plant />} />
             <Route path="/new" element={<CreatePlant />} />
           </Route>
         </Routes>
