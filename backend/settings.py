@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-$9apg5wm_p3sny*f*)*8h-j_(4-#dw4(nrl&jwwy_fv@)m-_p3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# LOCALHOST VERSION:
+
+# ALLOWED_HOSTS = []
+
+# DEPLOYED VERSION:
+
+ALLOWED_HOSTS = ["idun-jord.herokuapp.com",
+                 "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -51,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    # Simplified static file serving: https://warehouse.python.org/project/whitenoise/
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -84,13 +93,24 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 # added this to use postgres as the databse instead of the default sqlite.
+
+# LOCALHOST VERSION:
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'plants',
+#         'HOST': 'localhost',
+#         'PORT': 5432
+#     }
+# }
+
+# DEPLOYED VERSION:
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'plants',
-        'HOST': 'localhost',
-        'PORT': 5432
-    }
+    'default': dj_database_url.config(
+        default='postgres://andru@localhost/90s-baby', conn_max_age=600
+    )
 }
 
 
@@ -129,6 +149,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Location where django collect all static files
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
