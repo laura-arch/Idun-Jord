@@ -37,10 +37,13 @@ const Plant = () => {
     <div className="app-content">
       <h1 className="main-heading">{plant.name}</h1>
       <img className="main-image" src={plant.image}></img>
-      <button className="update-button" onClick={handleUpdateClick}>
+      <button className="button" onClick={() => navigate("/")}>
+        Home
+      </button>
+      <button className="update-button button" onClick={handleUpdateClick}>
         Update Plant
       </button>
-      <button className="delete-button" onClick={handleDeleteClick}>
+      <button className="delete-button button" onClick={handleDeleteClick}>
         Delete Plant
       </button>
     </div>
