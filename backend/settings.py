@@ -150,12 +150,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ONLY REQUIRED FOR HOSTED:
+
 # Location where django collect all static files
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# https: // docs.djangoproject.com/en/4.0/ref/settings/  # default-auto-field
