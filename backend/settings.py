@@ -70,6 +70,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'https://lovely-klepon-ee2664.netlify.app',
+    'lovely-klepon-ee2664.netlify.app'
 ]
 
 TEMPLATES = [
